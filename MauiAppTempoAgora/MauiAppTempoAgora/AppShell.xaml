@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiAppTempoAgora.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Views="clr-namespace:MauiAppTempoAgora.View"
+    Shell.NavBarIsVisible="False"
+    Title="MauiAppTempoAgora">
+
+    <!-- Estrutura de navegação por tab -->
+    <TabBar>
+
+        <!-- Aba principal: consulta de clima em tempo real -->
+        <Tab Title="Clima"
+             Icon="clima.png"
+             Route="NovaConsulta">
+
+            <ShellContent>
+                <!-- Página responsável por buscar clima via API -->
+                <Views:NovaConsulta Title="Nova Consulta" />
+            </ShellContent>
+
+        </Tab>
+
+        <!-- Aba secundária: histórico de consultas salvas no SQLite -->
+        <Tab Title="Histórico"
+             Icon="historico.png"
+             Route="Historico">
+
+            <ShellContent>
+                <!-- Página que exibe consultas armazenadas localmente -->
+                <Views:HistoricoConsulta Title="Histórico" />
+            </ShellContent>
+
+        </Tab>
+
+    </TabBar>
+
+</Shell>
